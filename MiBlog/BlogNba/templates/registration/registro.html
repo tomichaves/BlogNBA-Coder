@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+    />
+
+    <link href="../../static/BlogNba/CSS/registro.css" rel="stylesheet" />
+    <link href="../../static/BlogNba/CSS/style.css" rel="stylesheet" />
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <title>Registro de usuario</title>
+  </head>
+  <body>
+    <div class="container">
+      <br /><br /><br /><br />
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h2>Registro de usuario</h2>
+              <hr />
+              <form action = "" method="post">
+                
+                {% csrf_token %} 
+                {{ form.as_p }}
+
+                <a href="{% url 'post_list' %}"> Ir al home </a>
+                <a href="{% url 'login' %}">Iniciar Sesion</a>
+
+                <input
+                  type="submit"
+                  value="Registrar"
+                  class="btn btn-succes float-right"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

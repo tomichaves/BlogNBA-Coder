@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+    /> -->
+
+    <link
+      href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <link href="../../static/BlogNba/CSS/signin.css" rel="stylesheet" />
+    <link href="../../static/BlogNba/CSS/style.css" rel="stylesheet" />
+
+    <title>Ingreso al Blog</title>
+  </head>
+  <body>
+    <div class="container">
+      <br /><br /><br /><br />
+      <main class="form-signin w-100 m-auto">
+        <div class="row">
+          <div class="col-md-12" style="text-align: center !important;">
+
+            <img
+            class="mb-4"
+            src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NBA_script.svg"
+            alt=""
+            width="200"
+            height="122"
+            />
+
+          </div>
+        </div>
+        <form action="" method="post">
+
+          {% csrf_token %} {{ form }}
+         
+          <button class="w-100 btn btn-lg btn-primary btn-succes" type="submit">
+            Ingresar
+          </button>
+          <hr>
+          <a class="w-100 btn btn-lg btn-primary" href = "{% url 'registro' %}">Registrarse</a>
+          <a class="mt-1 mb-3 w-100 btn btn-lg btn-primary" href = "{% url 'post_list' %}">Ingrese como invitado</a>
+
+          <p class="mt-2 mb-3 text-muted" style="text-align: center !important;"  >&copy; 2022 – Continue</p>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

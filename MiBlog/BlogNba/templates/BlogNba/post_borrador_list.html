@@ -1,0 +1,35 @@
+{% extends "Herencia\padre_b.html" %}
+
+{% load static %}
+
+{% block herencia %}
+
+        <!-- Main Content-->
+        <a name="arriba"></a>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                {% for post in posts %}
+                
+                    <div class="post-preview" data-gb-custom-block data-tag="for"> 
+                      <div class="post">
+                        <div class="date">
+                                Creado: {{ post.fecha_creado|date:'d-m-Y' }}
+                        </div>
+                        <h1><a href="{% url 'post_detail' pk=post.pk %}"> {{ post.titulo }}</a></h1>
+                        <p>{{ post.contenido|truncatechars:200 }}</p>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                 {% endfor %}
+                 
+                 <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#arriba">Posts Anteriores →</a></div>
+
+                </div>
+            </div>
+        </div>
+     
+{% endblock %}
